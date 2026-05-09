@@ -1,0 +1,177 @@
+/* 1. Шрифты и база */
+@import url('https://googleapis.com');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #9499b7, #7279a0);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+/* 2. Шапка */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Прижать к верху */
+    padding: 20px 40px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    width: 120px;
+    height: auto;
+}
+
+.logo-text {
+    margin: 0;
+    font-size: 32px;
+    color: #4a4a4e;
+    font-weight: 800;
+}
+
+/* 3. Поиск */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2); 
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 100%; /* Гибкая ширина */
+    max-width: 1600px; /* Чтобы не был слишком длинным на огромных мониторах */
+    height: 45px;
+    margin-top: 100px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #333;
+}
+
+/* 4. Почасовой прогноз */
+.hourly-forecast {
+    display: flex;
+    justify-content: flex-start; /* Прижать к левому краю */
+    gap: 20px;
+    padding: 20px 40px;
+    margin-top: 20px;
+    overflow-x: auto; /* Добавит прокрутку, если карточек будет много */
+}
+
+.hourly-card {
+    background: rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px; /* Чтобы не сжимались */
+    transition: transform 0.2s; /* Плавность при наведении */
+}
+
+.hourly-card:hover {
+    transform: translateY(-5px); /* Эффект прыжка */
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hourly-card img {
+    width: 50px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.hourly-temp {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* Стили для заголовка 5 days */
+.section-title {
+    padding: 0 40px;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Стили для списка дней */
+.five-days-section {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.day-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.small-icon {
+    width: 35px;
+}
+
+/* Стили для большой температуры справа */
+.current-weather-main {
+    flex: 1.5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.big-temp {
+    font-size: 120px; /* Тот самый огромный шрифт */
+    font-weight: 800;
+    line-height: 1;
+}
+
+.current-date {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.huge-icon {
+    width: 250px; /* Огромное солнце */
+}
+
+
+
+
