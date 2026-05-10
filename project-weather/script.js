@@ -1,7 +1,7 @@
 const apiKey = "d6ba99871da98a8905c17e9c629969d6";
 
 async function getWeather(city) {
-    // ВАЖНО: Проверь, что ссылки начинаются на api. и содержат /data/2.5/
+    
     const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     try {
@@ -13,7 +13,7 @@ async function getWeather(city) {
         const currentData = await currentRes.json();
         const forecastData = await forecastRes.json();
 
-        // Проверяем, что оба запроса прошли успешно
+        
         if (currentData.cod === 200 && forecastData.cod === "200") {
             updateUI(currentData);
             updateForecastUI(forecastData);
@@ -31,7 +31,7 @@ function updateUI(data) {
     document.querySelector('.wind-speed').innerText = Math.round(data.wind.speed) + " km/h";
     document.querySelector('.feels-like').innerText = "Feels like: " + Math.round(data.main.feels_like) + "°C";
     
-    // Время рассвета и заката
+    
     const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     
@@ -43,7 +43,7 @@ function updateUI(data) {
 }
 
 function updateForecastUI(data) {
-    // 1. Почасовой прогноз (берем первые 5 элементов из списка)
+    
     const hourlyCards = document.querySelectorAll('.hourly-card');
     for (let i = 0; i < hourlyCards.length; i++) {
         if (!data.list[i]) break;
@@ -55,7 +55,7 @@ function updateForecastUI(data) {
         hourlyCards[i].querySelector('.hourly-temp').innerText = temp;
     }
 
-    // 2. Прогноз на 5 дней (берем каждый 8-й элемент, т.к. шаг в API — 3 часа)
+   
     const dayRows = document.querySelectorAll('.day-row');
     let dayIndex = 0;
     for (let i = 7; i < data.list.length; i += 8) {
@@ -73,7 +73,7 @@ function updateForecastUI(data) {
 }
 
 
-// Слушатель для поля ввода
+
 document.getElementById('city-input').addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         getWeather(event.target.value);

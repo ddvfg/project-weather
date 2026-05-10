@@ -48,15 +48,15 @@ body {
 .sun-item { display: flex; align-items: center; gap: 10px; }
 .sun-item img { width: 35px; }
 
-/* Эффект при наведении на почасовую карточку */
+
 .hourly-card {
-    /* ... твой текущий код ... */
-    transition: all 0.3s ease; /* Добавь это для плавности */
+    
+    transition: all 0.3s ease; 
     cursor: pointer;
 }
 
 .hourly-card:hover {
-    background: rgba(0, 0, 0, 0.4); /* Делаем фон темнее */
-    transform: translateY(-5px);    /* Карточка слегка приподнимается */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Добавляем мягкую тень */
+    background: rgba(0, 0, 0, 0.4); 
+    transform: translateY(-5px);    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
