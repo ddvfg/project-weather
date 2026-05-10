@@ -1,0 +1,62 @@
+@import url('https://googleapis.com');
+
+html, body { height: 100%; margin: 0; }
+body {
+    background: linear-gradient(to bottom, #9499b7, #7279a0);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+.logo { display: flex; flex-direction: column; align-items: center; }
+.logo-img { width: 80px; height: auto; }
+.logo-text { margin: 0; font-size: 28px; color: #4a4a4e; font-weight: 800; }
+
+.search-container {
+    display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.2); 
+    padding: 10px 20px; border-radius: 12px; width: 100%; margin: 20px 40px; 
+    height: 50px; box-sizing: border-box;
+}
+.search-icon { width: 22px; height: 22px; margin-right: 12px; }
+.search-input { background: transparent; border: none; outline: none; width: 100%; font-size: 18px; font-weight: 700; color: #333; }
+.search-input::placeholder { color: #333; }
+
+.hourly-forecast { display: flex; gap: 20px; padding: 20px 40px; overflow-x: auto; }
+.hourly-card {
+    background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 20px;
+    display: flex; flex-direction: column; align-items: center; min-width: 100px;
+}
+.hourly-card img { width: 45px; margin: 10px 0; }
+
+.bottom-container { display: flex; padding: 20px 40px; gap: 30px; }
+.card { background: rgba(255, 255, 255, 0.15); border-radius: 30px; padding: 25px; }
+
+.daily-card { flex: 1; }
+.day-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.day-row img { width: 35px; }
+
+.main-weather-card { flex: 1.5; display: flex; flex-direction: column; justify-content: space-between; }
+.main-info { display: flex; justify-content: space-between; align-items: center; }
+.huge-temp { font-size: 90px; font-weight: 800; line-height: 1; }
+.main-sun { width: 130px; }
+.wind-block { text-align: center; }
+.wind-block img { width: 50px; }
+
+.sun-times { display: flex; gap: 40px; margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; }
+.sun-item { display: flex; align-items: center; gap: 10px; }
+.sun-item img { width: 35px; }
+
+/* Эффект при наведении на почасовую карточку */
+.hourly-card {
+    /* ... твой текущий код ... */
+    transition: all 0.3s ease; /* Добавь это для плавности */
+    cursor: pointer;
+}
+
+.hourly-card:hover {
+    background: rgba(0, 0, 0, 0.4); /* Делаем фон темнее */
+    transform: translateY(-5px);    /* Карточка слегка приподнимается */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Добавляем мягкую тень */
+}
